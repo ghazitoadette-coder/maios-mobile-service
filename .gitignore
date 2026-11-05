@@ -1,0 +1,32 @@
+# ==========================================
+# MAIOS MOBILE SERVICE - GITIGNORE (KOTLIN / ANDROID)
+# Maimai Edition
+# ==========================================
+
+# --- Gradle & Build Outputs ---
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+
+# --- Kotlin & Java Compiled Files ---
+*.class
+*.dex
+*.apk
+*.aab
+*.flat
+
+# --- IDE & Editor Files (Android Studio / VS Code) ---
+.idea/
+*.iml
+.vscode/
+*.ipr
+*.iws
+
+# --- Operating System & Temp Files ---
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
