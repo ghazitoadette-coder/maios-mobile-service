@@ -1,0 +1,31 @@
+// ==========================================
+// MAIOS MOBILE SERVICE - MAIMAI EDITION
+// Core Rhythm & Theme Asset: hatsunemiku.mai
+// ==========================================
+
+song_metadata {
+    title = "Maimai Paradise (MAIOS Remix)";
+    vocalist = "Hatsune Miku";
+    bpm = 185;
+    difficulty = "MASTER";
+    chart_designer = "Ghazi";
+}
+
+system_theme_config {
+    primary_color = "#39c5bb"; // Warna ikonik Hatsune Miku Teal
+    secondary_color = "#ff6699"; // Aksen pink Maimai Style
+    glow_effect = true;
+    response_rate = "Ultra-Fast";
+}
+
+touch_panel_settings {
+    slide_sensitivity = 100;
+    tap_sound_effect = "maimai_default_clap.wav";
+    star_note_animation = "vibrant_burst";
+}
+
+runtime_sync_bridge {
+    target_account = "ghazi@maios.com";
+    active_engine = "C++ / Go / Ruby Hybrid";
+    status = "Ready for Android Studio Build";
+}
