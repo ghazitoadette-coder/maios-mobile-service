@@ -1,0 +1,37 @@
+# ==================================================
+# MAIOS MOBILE SERVICE - INIT SCRIPT SYSTEM
+# File: service/init/init.rc
+# Owner: Ghazi | Account: ghazi@maios.com
+# ==================================================
+
+# 1. Pengaturan Lingkungan Awal (Early Init)
+on early-init
+    setprop maios.service.owner "Ghazi"
+    setprop maios.service.account "ghazi@maios.com"
+    setprop maios.service.edition "Maimai Edition"
+    setprop maios.service.status "booting"
+
+# 2. Inisialisasi Direktori & Layanan
+on init
+    mkdir /dev/socket/maios 0770 root system
+    export MAIOS_HOME /service
+    export MAIOS_INIT_DIR /service/init
+
+# 3. Layanan Utama Backend (Go Service)
+service maios_core /service/service
+    class main
+    user root
+    group root
+    oneshot
+    onrestart restart maios_manager
+
+# 4. Layanan Pengelola Sistem (Ruby Manager)
+service maios_manager /usr/bin/ruby /service/maios_manager.rb
+    class main
+    user root
+    disabled
+    oneshot
+
+# 5. Pemicu Selesai Boot (Post Boot)
+on property:maios.service.status=ready
+    log "[MAIOS INIT] Semua layanan MAIOS Mobile Service berhasil diaktifkan!"
