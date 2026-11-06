@@ -1,0 +1,19 @@
+# ==================================================
+# MAIOS MOBILE SERVICE - SPECIFIC INIT CONFIG
+# File: service/init/init_maios.rc
+# Owner: Ghazi | Account: ghazi@maios.com
+# ==================================================
+
+# Konfigurasi Layanan Khusus MAIOS Maimai Edition
+on property:maios.service.edition=Maimai Edition
+    setprop maios.asset.default "hatsunemiku.mai"
+    setprop maios.security.isolation true
+    log "[MAIOS INIT] Profil Maimai Edition dimuat untuk ghazi@maios.com"
+
+# Perintah Eksekusi Modul Pendukung
+service maios_asset_loader /service/loader --asset=hatsunemiku.mai
+    class core
+    user root
+    group root
+    oneshot
+    
