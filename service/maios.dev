@@ -1,0 +1,38 @@
+# ==========================================
+# MAIOS MOBILE SERVICE - DEVELOPER MANIFEST
+# File: maios.dev
+# ==========================================
+
+[developer_profile]
+username = "ghazitoadette-coder"
+display_name = "Mai-os dev"
+contact_email = "ghazi@maios.com"
+primary_role = "Lead Architect & Developer"
+license = "Apache-2.0"
+
+[project_environment]
+project_name = "MAIOS Mobile Service"
+edition = "Maimai Edition"
+active_domain = "maios.com"
+build_target = "Android Studio / NDK Hybrid"
+deployment_status = "active"
+
+[language_distribution]
+go = "40.2%"
+ruby = "14.1%"
+java = "11.3%"
+python = "11.1%"
+c = "9.3%"
+kotlin = "8.1%"
+smali = "5.9%"
+
+[active_modules]
+service_directory = "service/"
+core_assets = ["hatsunemiku.mai", "service_core.maios", "account.maios"]
+runtime_engines = ["go_backend", "ruby_manager", "c_runtime", "android_bridge"]
+
+[dev_settings]
+debug_mode = true
+autonomous_mode = true
+bypass_google_services = true
+local_p2p_sync = true
