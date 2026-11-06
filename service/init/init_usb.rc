@@ -1,0 +1,23 @@
+# ==================================================
+# MAIOS MOBILE SERVICE - USB INIT CONFIG
+# File: service/init/init_usb.rc
+# Owner: Ghazi | Account: ghazi@maios.com
+# ==================================================
+
+# Konfigurasi Pengaturan USB & Perangkat Keras
+on fs
+    mkdir /dev/usb-ffs 0770 shell shell
+    mkdir /dev/usb-ffs/maios 0770 shell shell
+
+# Pemicu Saat Perangkat USB Terhubung
+on property:sys.usb.state=connected
+    setprop maios.usb.active true
+    log "[MAIOS USB] Perangkat USB terhubung ke ekosistem MAIOS untuk ghazi@maios.com"
+
+# Layanan Pengelola Koneksi USB / ADB Bridge
+service maios_usb_bridge /service/usb_bridge
+    class core
+    user root
+    group root
+    oneshot
+    
