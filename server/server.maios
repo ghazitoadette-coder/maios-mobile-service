@@ -1,0 +1,17 @@
+# ==================================================
+# MAIOS SERVER CONFIGURATION FILE
+# File: server/server.maios
+# Owner: Ghazi (ghazi@maios.com)
+# ==================================================
+
+[server_settings]
+host = 127.0.0.1
+port = 8080
+mode = development
+protocol = http
+
+[maios_network]
+service_name = maios-mobile-service
+edition = maimai_edition
+auto_connect = true
+timeout_seconds = 30
